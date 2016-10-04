@@ -8,15 +8,15 @@ public class DoodleBugs extends Organism
     public int StarveCount= 0;
 
     //Steps to breed
-    private final int  Steps_b4_Breed;
+   private final int  Steps_b4_Breed = 8;
 
 
 
 
 
-    public DoodleBugs(World world, int pos_X, int pos_Y)
+    public DoodleBugs(Grid world, int pos_X, int pos_Y)
     {
-       super(world, x, y, Steps_b4_Breed);
+       super(world, pos_X, pos_Y, Steps_b4_Breed);
 
     }
 
@@ -42,6 +42,7 @@ public class DoodleBugs extends Organism
             return false;
         }
 
+        return true;
     }
 
     private boolean eatAnt(int maybeX, int maybeY)
