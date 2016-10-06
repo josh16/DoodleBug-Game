@@ -1,12 +1,14 @@
 package com.company;
 
+import java.util.Random;
+
 /**
  * Created by Josh on 2016-10-04.
  */
 
-public class Organism {
+public abstract class Organism {
 
-    /
+    //
     public String type;
     public int x_Pos;
     public int y_Pos;
@@ -14,13 +16,13 @@ public class Organism {
     public int stepsTaken = 0;
     public int breedInterval;
     public Random Num_Gen  = new Random();
-    public Main grid;
+
+    public static Organism[][] Grid;
+
+    public abstract String string();
 
 
-    public String string();
-
-
-    public boolean movePos();
+    public abstract boolean movePos();
 
 
     public Organism(Main Grid, int x_Pos, int y_Pos, int breedInterval)
@@ -29,7 +31,7 @@ public class Organism {
         //
         timestep = true;
         this.breedInterval = breedInterval;
-        this.grid = Grid;
+        this.Grid = Grid;
         this.x_Pos = x_Pos;
         this.y_Pos = y_Pos;
     }
@@ -49,10 +51,10 @@ public class Organism {
 
 
         //Setting the new Organisms to a new position for x and y.
-        if(Grid.pointInGrid(x_Pos, y_Pos) && Grid.getAt(x_Pos,y_Pos ) == null)
+        if(Grid.pointInGrid(x_Pos, y_Pos) && Grid.getCreature(x_Pos,y_Pos ) == null)
         {
-            Grid.setAt(newX, newY, this);
-            Grid.setAt(x_Pos, y_Pos, null);
+            Grid.SetCreature(newX, newY, this);
+            Grid.SetCreature(x_Pos, y_Pos, null);
             x_Pos= newX;
             y_Pos = newY;
 

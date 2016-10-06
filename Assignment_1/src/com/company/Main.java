@@ -19,7 +19,12 @@ public class Main
     public String Ants = "X";
     public String DoodleBugs ="Y";
 
+    public Random Num_Gen = new Random();
+
+
     public static void main(String[] args) {
+
+
 
 
         for(int row = 0; row < Grid.length; row++)
@@ -46,12 +51,23 @@ public class Main
 
 
 
+       public  void SetCreature()
+        {
+
+        }
+
+
+        public void getCreature()
+        {
+
+        }
 
 
 
+        public void pointInGrid()
+        {
 
-
-
+        }
 
 }
 

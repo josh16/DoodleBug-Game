@@ -21,7 +21,7 @@ public class DoodleBugs extends Organism
 
     public DoodleBugs(Organism Grid, int pos_X, int pos_Y)
     {
-       super(Grid, pos_X, pos_Y, Steps_b4_Breed);
+       super(Main Grid, pos_X, pos_Y, Steps_b4_Breed);
 
     }
 
@@ -52,12 +52,12 @@ public class DoodleBugs extends Organism
 
     private boolean eatAnt(int maybeX, int maybeY)
     {
-        Organism maybeOrg = Grid.getAt(maybeX, maybeY);
+        Organism maybeOrg = Grid.getCreature(maybeX, maybeY);
         if (Grid.pointInGrid(maybeX,maybeY) && maybeOrg != null && maybeOrg.toString() =="ant")
         {
             StarveCount = 0;
-            Grid.setAt(x_Pos,y_Pos, null);
-            Grid.setAt(maybeX,maybeY, this);
+            Grid.SetCreature(x_Pos,y_Pos, null);
+            Grid.SetCreature(maybeX,maybeY, this);
             this.x_Pos= maybeX;
             this.y_Pos=maybeY;
             return true;
@@ -69,7 +69,7 @@ public class DoodleBugs extends Organism
 
     public void Create (int newX, int newY)
     {
-        Grid.setAt(newX, newY, new DoodleBugs(Grid, newX, newY));
+        Grid.SetCreature(newX, newY, new DoodleBugs(Grid, newX, newY));
         return;
 
 
@@ -80,7 +80,7 @@ public class DoodleBugs extends Organism
 
     public void Starve()
     {
-        Grid.setAt(x_Pos,y_Pos, null);
+        Grid.SetCreature(x_Pos,y_Pos, null);
     }
 
 

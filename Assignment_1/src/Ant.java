@@ -20,7 +20,7 @@ public class  Ant extends Organism
         return "ant";
     }
 
-xqq
+
     //Return boolean
     public boolean checkMove()
     {
